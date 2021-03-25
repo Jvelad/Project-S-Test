@@ -75,7 +75,7 @@ public class Hero : MonoBehaviour {
 
 
     }
-    //QUE PASA IILO 7777
+    //QUE PASA IILO 7777 6666
     // Update is called once per frame
     void Update()
     {
@@ -107,7 +107,7 @@ public class Hero : MonoBehaviour {
 
 
 
-        // GetAxisRaw returns either -1, 0 or 1
+        // GetAxisRaw returns either -1, 0 or 1ss
         float inputRaw = 0;
         if (jumpTime < Time.time)
              inputRaw = Input.GetAxisRaw("Horizontal");
