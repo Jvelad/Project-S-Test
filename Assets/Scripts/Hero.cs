@@ -71,18 +71,18 @@ public class Hero : MonoBehaviour {
         colSizeY = this.GetComponent<BoxCollider2D>().size.y;
         colOffsetY = this.GetComponent<BoxCollider2D>().offset.y;
 
-
+        
 
 
     }
-    //QUE PASA IILO
+
     // Update is called once per frame
     void Update()
     {
         // Decrease timer that disables input movement. Used when attacking
         m_disableMovementTimer -= Time.deltaTime;
 
-        bool touchingGround = Physics2D.OverlapCircle(groundCheck.position, groundRadius, LayerMask.GetMask("GroundLayer","PlatformLayer"));
+        bool touchingGround = Physics2D.OverlapCircle(groundCheck.position, groundRadius, LayerMask.GetMask("GroundLayer","PlatformLayer")); 
 
         if (touchingGround)
         {
@@ -126,20 +126,20 @@ public class Hero : MonoBehaviour {
             GetComponent<SpriteRenderer>().flipX = false;
             m_facingDirection = 1;
         }
-
+            
         else if (inputRaw < 0)
         {
             GetComponent<SpriteRenderer>().flipX = true;
             m_facingDirection = -1;
         }
-
+     
         // SlowDownSpeed helps decelerate the characters when stopping
         float SlowDownSpeed = m_moving ? 1.0f : 0.5f;
 
         // Set movement
         if(isGrounded || jumpTime < Time.time)
             m_body2d.velocity = new Vector2(inputX * m_maxSpeed * SlowDownSpeed, m_body2d.velocity.y);
-
+  
 
         // Set AirSpeed in animator
         m_animator.SetFloat("AirSpeedY", m_body2d.velocity.y);
@@ -187,8 +187,8 @@ public class Hero : MonoBehaviour {
         {
             m_animator.SetBool("Walled", WallCheckHit);
             isWallSliding = true;
-
-        }else
+ 
+        }else 
         {
 
             isWallSliding = false;
@@ -217,7 +217,7 @@ public class Hero : MonoBehaviour {
             jumpTime = Time.time + wallJumpTime;
 
             m_body2d.velocity = new Vector2(m_xWallForce*-inputX, m_yWallForce);
-
+            
         }
 
 
@@ -233,7 +233,7 @@ public class Hero : MonoBehaviour {
         {
             // Set dust spawn position
             Vector3 dustSpawnPosition = transform.position + new Vector3(dustXOffset * m_facingDirection, dustYOffset, 0.0f);
-            GameObject newDust = Instantiate(dust, dustSpawnPosition, Quaternion.identity) as GameObject;
+            GameObject newDust = Instantiate(dust, dustSpawnPosition, Quaternion.identity) as GameObject;            
             // Turn dust in correct X direction
             newDust.transform.localScale = new Vector3(newDust.transform.localScale.x*m_facingDirection, newDust.transform.localScale.y , newDust.transform.localScale.z);
         }
@@ -259,7 +259,7 @@ public class Hero : MonoBehaviour {
     //Divide the collider by 2 while crouching
     void Col_crouch()
     {
-        //If its crouching then
+        //If its crouching then 
         if (m_animator.GetInteger("AnimState") == 2 && isGrounded)
         {
             this.GetComponent<BoxCollider2D>().size = new Vector2(this.GetComponent<BoxCollider2D>().size.x, colSizeY / 2);
@@ -309,6 +309,6 @@ public class Hero : MonoBehaviour {
         SpawnDustEffectOnHero(m_WallSlide, 0.27f , 1.36f);
     }
 
-
+    
 
 }
