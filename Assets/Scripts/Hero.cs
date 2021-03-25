@@ -75,7 +75,7 @@ public class Hero : MonoBehaviour {
 
 
     }
-    //QUE PASA IILO
+    //QUE PASA IILO 7777
     // Update is called once per frame
     void Update()
     {
