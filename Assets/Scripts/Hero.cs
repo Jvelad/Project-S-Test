@@ -59,7 +59,7 @@ public class Hero : MonoBehaviour {
 
 
 
-    // Use this for initialization
+    // Use this for initialization s
     void Start ()
     {
         m_animator = GetComponent<Animator>();
@@ -75,7 +75,7 @@ public class Hero : MonoBehaviour {
 
 
     }
-  
+
     //QUE PASA IILO 7777 6666
     // Update is called once per frame
     void Update()
