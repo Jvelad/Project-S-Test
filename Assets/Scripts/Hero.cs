@@ -60,6 +60,7 @@ public class Hero : MonoBehaviour {
 
 
     // Use this for initialization que pasa WApo
+
     void Start ()
     {
         m_animator = GetComponent<Animator>();
