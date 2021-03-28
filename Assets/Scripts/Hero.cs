@@ -29,7 +29,7 @@ public class Hero : MonoBehaviour {
     public float groundRadius = 0.2f;
     bool isGrounded = false;
 
-    [Header("WallJump")]
+    [Header("WallJumpyyyy")]
     [SerializeField] GameObject m_WallSlide;
     [SerializeField] GameObject m_WallJump;
 
